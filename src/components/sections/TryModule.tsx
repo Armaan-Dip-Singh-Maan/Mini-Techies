@@ -5,7 +5,7 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
-import { Mascot } from "@/components/brand/Mascot";
+import Image from "next/image";
 import { fireConfetti } from "@/lib/confetti";
 import { cn } from "@/lib/cn";
 
@@ -92,11 +92,25 @@ export function TryModule() {
       <SectionHeading
         eyebrow="Show, don't tell"
         title="Try a mini module right now"
-        subtitle="No signup, no app store. This is the kind of bite-sized, game-like learning kids get every day."
+        subtitle="Meet Mini, your AI tutor. No signup, no app store — just the kind of bite-sized, game-like learning kids get every day."
       />
 
-      <div className="mx-auto mt-12 max-w-2xl">
-        <div className="relative overflow-hidden rounded-[2rem] bg-white p-6 shadow-card ring-1 ring-ink/5 sm:p-8">
+      <div className="mx-auto mt-12 flex max-w-4xl items-center justify-center gap-6">
+        {!done && (
+          <div className="relative hidden w-44 shrink-0 lg:block">
+            <Image
+              src="/characters/mini.png"
+              alt="Mini, your AI math tutor"
+              width={287}
+              height={461}
+              className="h-auto w-full drop-shadow-xl"
+            />
+            <div className="absolute -right-1 top-4 rounded-2xl bg-primary px-3 py-2 text-xs font-semibold text-white shadow-pop">
+              Hi! I’m Mini ✨
+            </div>
+          </div>
+        )}
+        <div className="relative w-full max-w-2xl overflow-hidden rounded-[2rem] bg-white p-6 shadow-card ring-1 ring-ink/5 sm:p-8">
           {/* progress + xp header */}
           <div className="flex items-center justify-between gap-4">
             <div className="flex-1">
@@ -227,8 +241,14 @@ export function TryModule() {
                 animate={{ opacity: 1, scale: 1 }}
                 className="mt-6 text-center"
               >
-                <div className="mx-auto w-28">
-                  <Mascot mood="celebrate" />
+                <div className="mx-auto w-24">
+                  <Image
+                    src="/characters/mini.png"
+                    alt="Mini celebrating"
+                    width={287}
+                    height={461}
+                    className="h-auto w-full drop-shadow-xl"
+                  />
                 </div>
                 <h3 className="mt-4 text-2xl font-bold text-ink">
                   Module complete!

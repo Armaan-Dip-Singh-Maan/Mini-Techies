@@ -80,8 +80,14 @@ Enterprises** domain (it's a different host), e.g. via that site's hosting/redir
 3. Add the `mini-techies.ca` domain and any env vars from `.env.example`.
 4. Submit `mini-techies.ca/sitemap.xml` in Google Search Console.
 
-## Client-supplied assets to drop in later
-- Final logo files (replace placeholder in `src/components/brand/Logo.tsx`)
-- Brand colours/fonts (tokens in `src/app/globals.css` under `@theme`)
-- Team headshots + bios (placeholders in `src/lib/site.ts` / `TeamCard`)
-- Real app screenshots for the App Preview section
+## Brand assets
+
+Client-supplied assets already integrated (processed via `scripts/prep-assets.mjs`):
+- Mini Techies logo — `public/logo.png` (blue background removed), used in header/footer.
+- "Mini" the AI tutor character — `public/characters/mini.png`, featured in the Try-a-Module section.
+- Team headshots — `public/team/dandre.png`, `public/team/kamini.png` (cropped from the supplied cards).
+
+Still to drop in later:
+- Moose's headshot (currently an initials placeholder in `src/lib/site.ts`).
+- Real app screenshots for the App Preview section.
+- Brand colours/fonts can be tuned via tokens in `src/app/globals.css` under `@theme`.

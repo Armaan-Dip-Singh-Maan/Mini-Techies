@@ -1,25 +1,19 @@
+import Image from "next/image";
 import { cn } from "@/lib/cn";
 
 /**
- * Placeholder wordmark + mark for Mini Techies.
- * Swap the mark for the client-supplied logo file when provided.
+ * Mini Techies wordmark logo (client-supplied).
  */
-export function Logo({
-  className,
-  showWord = true,
-}: {
-  className?: string;
-  showWord?: boolean;
-}) {
+export function Logo({ className }: { className?: string }) {
   return (
-    <span className={cn("inline-flex items-center gap-2.5", className)}>
-      <LogoMark className="h-9 w-9" />
-      {showWord && (
-        <span className="font-display text-xl font-bold tracking-tight text-ink">
-          Mini<span className="text-primary">Techies</span>
-        </span>
-      )}
-    </span>
+    <Image
+      src="/logo.png"
+      alt="Mini Techies"
+      width={376}
+      height={179}
+      priority
+      className={cn("h-9 w-auto", className)}
+    />
   );
 }
 
@@ -38,7 +32,6 @@ export function LogoMark({ className }: { className?: string }) {
         </linearGradient>
       </defs>
       <rect x="3" y="3" width="42" height="42" rx="13" fill="url(#mt-mark)" />
-      {/* friendly robot face */}
       <circle cx="18" cy="22" r="4.2" fill="white" />
       <circle cx="30" cy="22" r="4.2" fill="white" />
       <circle cx="18" cy="22" r="1.9" fill="var(--color-ink)" />

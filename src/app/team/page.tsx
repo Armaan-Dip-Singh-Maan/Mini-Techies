@@ -65,7 +65,7 @@ export default function TeamPage() {
         <SectionHeading
           eyebrow="Leadership"
           title="Meet the team"
-          subtitle="Headshots and bios are supplied by the team — placeholders shown until final assets arrive."
+          subtitle="The leaders building joyful, ad-free STEM learning for every kind of mind."
         />
         <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-3">
           {team.map((m, i) => (

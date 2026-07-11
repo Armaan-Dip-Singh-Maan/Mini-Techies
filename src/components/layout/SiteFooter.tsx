@@ -9,7 +9,7 @@ export function SiteFooter() {
       <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
-            <Logo className="[&_span]:text-cream" />
+            <Logo className="h-10 w-auto" />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-cream/70">
               {site.tagline} A {site.parent} product, building joyful,
               ad-free STEM learning for every kind of mind.
