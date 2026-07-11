@@ -4,7 +4,6 @@ import { WhoItsFor } from "@/components/sections/WhoItsFor";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { AppPreview } from "@/components/sections/AppPreview";
 import { ForParents } from "@/components/sections/ForParents";
-import { TeamTeaser } from "@/components/sections/TeamTeaser";
 import { Waitlist } from "@/components/sections/Waitlist";
 import { faqs } from "@/lib/site";
 
@@ -31,7 +30,6 @@ export default function Home() {
       <HowItWorks />
       <AppPreview />
       <ForParents />
-      <TeamTeaser />
       <Waitlist />
     </>
   );

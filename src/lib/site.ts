@@ -107,6 +107,7 @@ export const team = [
     bio: "Moose leads Mini Techies with a mission to make world-class STEM learning playful, accessible, and available to every kid.",
     initials: "MA",
     photo: null,
+    card: null,
     accent: "primary" as const,
   },
   {
@@ -115,6 +116,7 @@ export const team = [
     bio: "D'Andre shapes the learning experience, blending real curriculum with game design so progress feels like play.",
     initials: "DW",
     photo: "/team/dandre.png",
+    card: "/team/dandre-card.png",
     accent: "coral" as const,
   },
   {
@@ -123,6 +125,7 @@ export const team = [
     bio: "Kamini builds the adaptive technology that personalizes every learner's path safely and at scale.",
     initials: "KS",
     photo: "/team/kamini.png",
+    card: "/team/kamini-card.png",
     accent: "sky" as const,
   },
 ];

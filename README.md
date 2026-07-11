@@ -82,12 +82,13 @@ Enterprises** domain (it's a different host), e.g. via that site's hosting/redir
 
 ## Brand assets
 
-Client-supplied assets already integrated (processed via `scripts/prep-assets.mjs`):
+Client-supplied assets already integrated (processed via `scripts/prep-assets.mjs` and `scripts/prep-tutors.mjs`):
 - Mini Techies logo — `public/logo.png` (blue background removed), used in header/footer.
-- "Mini" the AI tutor character — `public/characters/mini.png`, featured in the Try-a-Module section.
-- Team headshots — `public/team/dandre.png`, `public/team/kamini.png` (cropped from the supplied cards).
+- AI tutor characters — `public/characters/mini.png` (Math), `tammy.png` (Tech), `egoa.png` (Engineering). They appear in the Try-a-Module section, swapping with the active subject.
+- Team welcome cards — `public/team/dandre-card.png`, `public/team/kamini-card.png` shown full on the dedicated `/team` page (not on the home page). Members without a card get a matching branded placeholder (`WelcomeCard`).
 
 Still to drop in later:
-- Moose's headshot (currently an initials placeholder in `src/lib/site.ts`).
+- Moose's team card / photo (currently a branded initials placeholder in `WelcomeCard`).
+- A Science AI tutor character (Math tutor is used as the fallback host).
 - Real app screenshots for the App Preview section.
 - Brand colours/fonts can be tuned via tokens in `src/app/globals.css` under `@theme`.

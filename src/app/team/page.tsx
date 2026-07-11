@@ -3,7 +3,7 @@ import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
-import { TeamCard } from "@/components/TeamCard";
+import { WelcomeCard } from "@/components/WelcomeCard";
 import { Mascot } from "@/components/brand/Mascot";
 import { team, site } from "@/lib/site";
 
@@ -67,10 +67,16 @@ export default function TeamPage() {
           title="Meet the team"
           subtitle="The leaders building joyful, ad-free STEM learning for every kind of mind."
         />
-        <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-3">
+        <div className="mx-auto mt-12 grid max-w-5xl gap-6 sm:grid-cols-2 md:grid-cols-3">
           {team.map((m, i) => (
             <Reveal key={m.name} delay={i * 0.08}>
-              <TeamCard {...m} />
+              <WelcomeCard
+                name={m.name}
+                title={m.title}
+                initials={m.initials}
+                accent={m.accent}
+                card={m.card}
+              />
             </Reveal>
           ))}
         </div>
