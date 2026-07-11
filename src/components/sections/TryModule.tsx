@@ -28,14 +28,6 @@ const questions: Question[] = [
     explain: "3 + 5 = 8 steps. Addition combines both groups of steps.",
   },
   {
-    subject: "Science",
-    emoji: "🔬",
-    prompt: "Which of these is a source of renewable energy?",
-    options: ["Coal", "Solar", "Gasoline", "Natural gas"],
-    answer: 1,
-    explain: "Solar power comes from the sun and never runs out — that's renewable!",
-  },
-  {
     subject: "Tech",
     emoji: "💻",
     prompt: "In code, what does a 'loop' help you do?",
@@ -48,7 +40,27 @@ const questions: Question[] = [
     answer: 0,
     explain: "Loops repeat instructions so you don't have to write them over and over.",
   },
+  {
+    subject: "Engineering",
+    emoji: "🛠️",
+    prompt: "Which shape makes a bridge the strongest?",
+    options: ["Circle", "Triangle", "Square", "Star"],
+    answer: 1,
+    explain:
+      "Triangles spread force evenly, so engineers use them to build strong, stable structures.",
+  },
 ];
+
+type Tutor = { name: string; src: string; w: number; h: number };
+
+const tutors: Record<string, Tutor> = {
+  Math: { name: "Mini", src: "/characters/mini.png", w: 287, h: 461 },
+  Tech: { name: "Tammy", src: "/characters/tammy.png", w: 507, h: 756 },
+  Engineering: { name: "Egoa", src: "/characters/egoa.png", w: 337, h: 743 },
+  Science: { name: "Mini", src: "/characters/mini.png", w: 287, h: 461 },
+};
+
+const tutorSquad = [tutors.Math, tutors.Tech, tutors.Engineering];
 
 export function TryModule() {
   const reduce = useReducedMotion();
@@ -60,6 +72,7 @@ export function TryModule() {
   const q = questions[step];
   const isCorrect = picked === q?.answer;
   const isLast = step === questions.length - 1;
+  const tutor = (q && tutors[q.subject]) || tutors.Math;
 
   function choose(i: number) {
     if (picked !== null) return;
@@ -92,22 +105,33 @@ export function TryModule() {
       <SectionHeading
         eyebrow="Show, don't tell"
         title="Try a mini module right now"
-        subtitle="Meet Mini, your AI tutor. No signup, no app store — just the kind of bite-sized, game-like learning kids get every day."
+        subtitle="Meet your AI tutors — Mini, Tammy & Egoa. No signup, no app store — just the kind of bite-sized, game-like learning kids get every day."
       />
 
       <div className="mx-auto mt-12 flex max-w-4xl items-center justify-center gap-6">
         {!done && (
           <div className="relative hidden w-44 shrink-0 lg:block">
-            <Image
-              src="/characters/mini.png"
-              alt="Mini, your AI math tutor"
-              width={287}
-              height={461}
-              className="h-auto w-full drop-shadow-xl"
-            />
-            <div className="absolute -right-1 top-4 rounded-2xl bg-primary px-3 py-2 text-xs font-semibold text-white shadow-pop">
-              Hi! I’m Mini ✨
-            </div>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={tutor.name}
+                initial={reduce ? false : { opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={reduce ? undefined : { opacity: 0, y: -12 }}
+                transition={{ duration: 0.25 }}
+                className="relative"
+              >
+                <Image
+                  src={tutor.src}
+                  alt={`${tutor.name}, your AI ${q.subject} tutor`}
+                  width={tutor.w}
+                  height={tutor.h}
+                  className="mx-auto h-auto w-full drop-shadow-xl"
+                />
+                <div className="absolute -right-1 top-2 rounded-2xl bg-primary px-3 py-2 text-xs font-semibold text-white shadow-pop">
+                  Hi! I’m {tutor.name} ✨
+                </div>
+              </motion.div>
+            </AnimatePresence>
           </div>
         )}
         <div className="relative w-full max-w-2xl overflow-hidden rounded-[2rem] bg-white p-6 shadow-card ring-1 ring-ink/5 sm:p-8">
@@ -241,14 +265,17 @@ export function TryModule() {
                 animate={{ opacity: 1, scale: 1 }}
                 className="mt-6 text-center"
               >
-                <div className="mx-auto w-24">
-                  <Image
-                    src="/characters/mini.png"
-                    alt="Mini celebrating"
-                    width={287}
-                    height={461}
-                    className="h-auto w-full drop-shadow-xl"
-                  />
+                <div className="mx-auto flex items-end justify-center gap-2">
+                  {tutorSquad.map((t) => (
+                    <Image
+                      key={t.name}
+                      src={t.src}
+                      alt={t.name}
+                      width={t.w}
+                      height={t.h}
+                      className="h-24 w-auto drop-shadow-xl sm:h-28"
+                    />
+                  ))}
                 </div>
                 <h3 className="mt-4 text-2xl font-bold text-ink">
                   Module complete!
