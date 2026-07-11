@@ -76,6 +76,7 @@ export default function TeamPage() {
                 initials={m.initials}
                 accent={m.accent}
                 card={m.card}
+                photo={m.photo}
               />
             </Reveal>
           ))}

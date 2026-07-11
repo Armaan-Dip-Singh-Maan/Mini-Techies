@@ -107,7 +107,7 @@ export const team = [
     title: "Founder & Chief Executive Officer",
     bio: "Moose leads Mini Techies with a mission to make world-class STEM learning playful, accessible, and available to every kid.",
     initials: "MA",
-    photo: null,
+    photo: "/team/moose.png",
     card: null,
     accent: "primary" as const,
   },
