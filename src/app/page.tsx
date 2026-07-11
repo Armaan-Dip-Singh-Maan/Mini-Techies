@@ -3,6 +3,7 @@ import { TryModule } from "@/components/sections/TryModule";
 import { WhoItsFor } from "@/components/sections/WhoItsFor";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { AppPreview } from "@/components/sections/AppPreview";
+import { MemoryGame } from "@/components/sections/MemoryGame";
 import { ForParents } from "@/components/sections/ForParents";
 import { Waitlist } from "@/components/sections/Waitlist";
 import { faqs } from "@/lib/site";
@@ -29,6 +30,7 @@ export default function Home() {
       <WhoItsFor />
       <HowItWorks />
       <AppPreview />
+      <MemoryGame />
       <ForParents />
       <Waitlist />
     </>

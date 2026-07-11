@@ -13,6 +13,10 @@ const jobs = [
     src: `${SRC}/29e068811e7c45b4c3fd467295332445fd1d3794-6972f3b0-9ec4-46d7-948d-6627ab507656.png`,
     out: `${OUT}/egoa.png`,
   },
+  {
+    src: `${SRC}/f45099e4d5b71e9879341f81a836821483072e19-bf3f30cc-7465-4a7c-ba6d-ccc14551289f.png`,
+    out: `${OUT}/siren.png`,
+  },
 ];
 
 for (const { src, out } of jobs) {

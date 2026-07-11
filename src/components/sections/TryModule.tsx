@@ -28,6 +28,14 @@ const questions: Question[] = [
     explain: "3 + 5 = 8 steps. Addition combines both groups of steps.",
   },
   {
+    subject: "Science",
+    emoji: "🔬",
+    prompt: "Which of these is a source of renewable energy?",
+    options: ["Coal", "Solar", "Gasoline", "Natural gas"],
+    answer: 1,
+    explain: "Solar power comes from the sun and never runs out — that's renewable!",
+  },
+  {
     subject: "Tech",
     emoji: "💻",
     prompt: "In code, what does a 'loop' help you do?",
@@ -55,12 +63,17 @@ type Tutor = { name: string; src: string; w: number; h: number };
 
 const tutors: Record<string, Tutor> = {
   Math: { name: "Mini", src: "/characters/mini.png", w: 287, h: 461 },
+  Science: { name: "Siren", src: "/characters/siren.png", w: 288, h: 662 },
   Tech: { name: "Tammy", src: "/characters/tammy.png", w: 507, h: 756 },
   Engineering: { name: "Egoa", src: "/characters/egoa.png", w: 337, h: 743 },
-  Science: { name: "Mini", src: "/characters/mini.png", w: 287, h: 461 },
 };
 
-const tutorSquad = [tutors.Math, tutors.Tech, tutors.Engineering];
+const tutorSquad = [
+  tutors.Math,
+  tutors.Science,
+  tutors.Tech,
+  tutors.Engineering,
+];
 
 export function TryModule() {
   const reduce = useReducedMotion();
@@ -105,7 +118,7 @@ export function TryModule() {
       <SectionHeading
         eyebrow="Show, don't tell"
         title="Try a mini module right now"
-        subtitle="Meet your AI tutors — Mini, Tammy & Egoa. No signup, no app store — just the kind of bite-sized, game-like learning kids get every day."
+        subtitle="Meet your AI tutors — Mini, Siren, Tammy & Egoa. No signup, no app store — just the kind of bite-sized, game-like learning kids get every day."
       />
 
       <div className="mx-auto mt-12 flex max-w-4xl items-center justify-center gap-6">
