@@ -9,12 +9,12 @@ import {
 } from "motion/react";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Mascot } from "@/components/brand/Mascot";
+import { TutorAvatar, type TutorKey } from "@/components/brand/TutorAvatar";
 import { steps } from "@/lib/site";
 import { accentStyles } from "@/lib/accents";
 import { cn } from "@/lib/cn";
 
-const moods = ["think", "happy", "celebrate", "wave"] as const;
+const stepTutors: TutorKey[] = ["mini", "siren", "tammy", "egoa"];
 
 export function HowItWorks() {
   const [active, setActive] = useState(0);
@@ -53,8 +53,11 @@ export function HowItWorks() {
                 <div className="text-7xl" aria-hidden="true">
                   {steps[active].emoji}
                 </div>
-                <div className="mt-4 w-40">
-                  <Mascot mood={moods[active]} />
+                <div className="mt-4 flex h-44 items-end justify-center">
+                  <TutorAvatar
+                    tutor={stepTutors[active % stepTutors.length]}
+                    imgClassName="h-full w-auto"
+                  />
                 </div>
                 <p className="mt-4 font-display text-sm font-bold uppercase tracking-wide text-ink/60">
                   Step {steps[active].n} of {steps.length}

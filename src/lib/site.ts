@@ -5,8 +5,6 @@ export const site = {
   tagline: "STEM adventures that level up real school skills.",
   description:
     "Mini Techies gamifies science, technology, engineering, and math for kids ages 7-18. Built on real school curriculum, enhanced with AI, with progress tracking, certificates, and built-in support for neurodiverse learners. No ads, ever.",
-  parent: "QA Enterprises",
-  oldUrl: "https://www.qa-enterprises.com/mini-techies",
   email: "hello@mini-techies.ca",
   social: {
     instagram: "https://instagram.com",

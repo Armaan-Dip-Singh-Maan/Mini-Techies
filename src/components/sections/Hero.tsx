@@ -4,7 +4,7 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { AudienceToggle } from "@/components/ui/AudienceToggle";
-import { Mascot } from "@/components/brand/Mascot";
+import { TutorAvatar } from "@/components/brand/TutorAvatar";
 import { PersonalizePreview } from "./PersonalizePreview";
 import { useAudience } from "@/components/providers/AudienceProvider";
 
@@ -126,11 +126,11 @@ export function Hero() {
 
         <div className="relative mx-auto w-full max-w-md">
           <motion.div
-            className="absolute -left-6 -top-10 z-10 hidden w-28 sm:block lg:-left-12"
+            className="absolute -left-6 -top-14 z-10 hidden w-24 sm:block lg:-left-12"
             animate={reduce ? undefined : { y: [0, -12, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
           >
-            <Mascot mood="wave" float={false} />
+            <TutorAvatar tutor="mini" float={false} />
           </motion.div>
           <PersonalizePreview />
         </div>

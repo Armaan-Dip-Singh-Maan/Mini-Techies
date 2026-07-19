@@ -4,7 +4,7 @@ import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
-import { Mascot } from "@/components/brand/Mascot";
+import { TutorAvatar } from "@/components/brand/TutorAvatar";
 import { fireConfetti } from "@/lib/confetti";
 import { cn } from "@/lib/cn";
 
@@ -67,11 +67,14 @@ export function Waitlist() {
 
       <div className="relative mx-auto max-w-3xl text-center text-white">
         <motion.div
-          className="mx-auto w-24"
+          className="mx-auto w-20"
           animate={reduce ? undefined : { y: [0, -10, 0] }}
           transition={{ duration: 4, repeat: Infinity }}
         >
-          <Mascot mood={status === "success" ? "celebrate" : "wave"} float={false} />
+          <TutorAvatar
+            tutor={status === "success" ? "siren" : "mini"}
+            float={false}
+          />
         </motion.div>
 
         <h2 className="mt-4 text-balance text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">

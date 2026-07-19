@@ -4,7 +4,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import { WelcomeCard } from "@/components/WelcomeCard";
-import { Mascot } from "@/components/brand/Mascot";
+import { TutorAvatar } from "@/components/brand/TutorAvatar";
 import { team, site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -46,8 +46,8 @@ export default function TeamPage() {
         <div className="bg-dotgrid pointer-events-none absolute inset-0 opacity-50" />
         <div className="pointer-events-none absolute -top-20 left-1/2 h-80 w-[700px] -translate-x-1/2 rounded-full bg-primary-soft blur-3xl" />
         <div className="relative mx-auto max-w-3xl px-4 text-center sm:px-6">
-          <div className="mx-auto w-24">
-            <Mascot mood="happy" />
+          <div className="mx-auto w-20">
+            <TutorAvatar tutor="mini" />
           </div>
           <h1 className="mt-4 text-balance text-4xl font-bold leading-tight text-ink sm:text-5xl md:text-6xl">
             The people behind{" "}

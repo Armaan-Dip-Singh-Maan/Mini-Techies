@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     "ad-free learning app",
   ],
   applicationName: site.name,
-  authors: [{ name: site.parent }],
+  authors: [{ name: site.name }],
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
@@ -72,7 +72,6 @@ const jsonLd = {
   name: site.name,
   url: site.url,
   description: site.description,
-  parentOrganization: { "@type": "Organization", name: site.parent },
   audience: {
     "@type": "EducationalAudience",
     educationalRole: "student",

@@ -11,8 +11,8 @@ export function SiteFooter() {
           <div>
             <Logo className="h-10 w-auto" />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-cream/70">
-              {site.tagline} A {site.parent} product, building joyful,
-              ad-free STEM learning for every kind of mind.
+              {site.tagline} Building joyful, ad-free STEM learning for every
+              kind of mind.
             </p>
           </div>
 
@@ -91,8 +91,7 @@ export function SiteFooter() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-cream/10 pt-6 text-xs text-cream/60 sm:flex-row">
           <p>
-            © {new Date().getFullYear()} {site.name}. A {site.parent} product.
-            All rights reserved.
+            © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
           <p className="flex items-center gap-2">
             <span className="inline-block h-2 w-2 rounded-full bg-mint" />

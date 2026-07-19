@@ -2,8 +2,7 @@
 
 A standalone, gamified, accessibility-first marketing site for **Mini Techies**, a STEM
 education platform that turns real school curriculum into game-like learning for kids
-ages 7-18. Built to migrate the product off `qa-enterprises.com/mini-techies` to its own
-home at **mini-techies.ca**.
+ages 7-18, at its home **mini-techies.ca**.
 
 ## Tech stack
 
@@ -31,7 +30,7 @@ Optional configuration lives in `.env.example` — copy it to `.env.local`.
 - **Personalize preview** — pick an age + subject and watch a learning path build live.
 - **Try a Mini Module** — a real, playable 3-question quiz with XP, feedback, and confetti.
 - **Gamified scroll** — an XP-style progress bar in the header fills as you explore.
-- **Animated mascot "Bit"** that reacts with moods across the page.
+- **AI tutor avatars** (Mini, Siren, Tammy & Egoa) that guide learners across the page.
 - **App preview** — an animated phone showing streaks, dashboards, and certificates.
 
 ### Pages
@@ -69,9 +68,7 @@ Includes email validation and a honeypot field for spam protection.
 
 ## Redirects / SEO continuity
 
-`next.config.ts` redirects `/mini-techies*` -> `/` as a safety net. The primary 301 from
-`qa-enterprises.com/mini-techies` -> `mini-techies.ca` must be configured on the **QA
-Enterprises** domain (it's a different host), e.g. via that site's hosting/redirect rules.
+`next.config.ts` redirects `/mini-techies*` -> `/` as a safety net.
 
 ## Deploying to Vercel
 
